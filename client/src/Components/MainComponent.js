@@ -12,6 +12,7 @@ import TreatmentComp from "./TreatmentComponent";
 import AllDocsComponent from "./AllDocsComponent";
 import AllTreatmentComponent from "./AllTreatment";
 import GetPatient from "./getPatientComponent";
+
 //import HDWalletProvider from "@truffle/hdwallet-provider";
 
 class Main extends Component {

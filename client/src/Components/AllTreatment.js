@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import { Breadcrumb, BreadcrumbItem, Button, Form, FormGroup, Label, Input, Col, FormFeedback ,Card, CardImg,CardImgOverlay, CardTitle, CardBody, CardText} from 'reactstrap';
 import { BrowserRouter, NavLink } from 'react-router-dom';
 
@@ -6,9 +7,10 @@ import { render } from 'react-dom';
 var mst;
 var alldocs = [];
 function Allpatrender({dish}){
+    var day = moment.unix(dish.dateofComp); 
     var xy = dish.dateofComp;
     var date = new Date(xy*1000);
-    var time = JSON.stringify(date);
+    var time = day.format('dddd MMMM Do YYYY, h:mm:ss a');
     var yz = xy != 0?"bg-success text-white":""; 
     return(
         <Card className={yz}>

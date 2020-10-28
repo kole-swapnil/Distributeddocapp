@@ -114,6 +114,11 @@ class GetPatient extends Component {
                         <CardText><small >treatments Undergone : {this.state.treatmentsgone}</small></CardText>
                     </CardBody>
                 </Card>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                
             </div>
 
 

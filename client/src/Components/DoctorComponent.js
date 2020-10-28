@@ -28,8 +28,8 @@ class DoctorComp extends Component{
     async handleSubmit(event){
         console.log("Current State" + JSON.stringify(this.state));
         event.preventDefault();
-        const req = await this.props.contract.methods.calldoctor(this.state.age,this.state.name,this.state.speciality).send({from: this.props.accounts[0],gas : 1000000});
         
+        const req = await this.props.contract.methods.calldoctor(this.state.age,this.state.name,this.state.speciality).send({from: this.props.accounts[0],gas : 1000000});
         
         // console.log(res);
         
