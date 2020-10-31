@@ -12,6 +12,7 @@ import TreatmentComp from "./TreatmentComponent";
 import AllDocsComponent from "./AllDocsComponent";
 import AllTreatmentComponent from "./AllTreatment";
 import GetPatient from "./getPatientComponent";
+import SharedComp from "./SharedComponent";
 
 //import HDWalletProvider from "@truffle/hdwallet-provider";
 
@@ -72,6 +73,7 @@ class Main extends Component {
           <Route path='/patient' component={() => <PatientComp contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>} />
           <Route path='/treat' component={() => <AllTreatmentComponent contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
           <Route path='/patdata' component={() => <GetPatient contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
+          <Route path='/shared' component={() => <SharedComp contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
           <Redirect to="/"/>
         </Switch>
         <Footer/>
