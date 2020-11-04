@@ -4,7 +4,7 @@ import { Breadcrumb, BreadcrumbItem, Button, Form, FormGroup, Label, Input, Col,
 import { BrowserRouter, NavLink } from 'react-router-dom';
 import '../App.css';
 import { render } from 'react-dom';
-const iframe = '<iframe height="600" style="width: 90%;" scrolling="no" title="fx." src="http://localhost:3000/" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>'; 
+const iframe = '<iframe height="600" style="width: 100%;" scrolling="yes" title="fx." src="http://localhost:3000/" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe>'; 
 
 
 function Iframe(props) {
@@ -14,7 +14,7 @@ function Iframe(props) {
 function SharedComp() {
   return (
     <div className="App">
-      <h1>OHIF VIEWER</h1>
+  
       <Iframe iframe={iframe} />,
     </div>
   );
