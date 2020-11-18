@@ -75,9 +75,7 @@ class GetPatient extends Component {
         else if(this.state.patient_state == 2){
             st = 'Deceased';
         }
-        if(!this.props.auth){
-            return(<React.Fragment></React.Fragment>);
-        }
+        
         return (
             <div className="container">
 
