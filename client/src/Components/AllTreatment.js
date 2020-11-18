@@ -62,7 +62,9 @@ class AllTreatmentComponent extends Component{
                 </div>
             );
         })
-        
+        if(!this.props.auth){
+            return(<React.Fragment></React.Fragment>);
+        }
         return(
         <div className="container">
             <h2>All Treatment</h2>

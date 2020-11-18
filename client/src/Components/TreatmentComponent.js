@@ -69,7 +69,9 @@ class TreatmentComp extends Component{
     }
 
     render(){
-        
+        if(!this.props.auth){
+            return(<React.Fragment></React.Fragment>);
+        }
         return(
             <div className="container">
                 
