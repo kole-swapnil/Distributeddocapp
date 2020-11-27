@@ -13,6 +13,7 @@ import AllDocsComponent from "./AllDocsComponent";
 import AllTreatmentComponent from "./AllTreatment";
 import GetPatient from "./getPatientComponent";
 import SharedComp from "./SharedComponent";
+import StudyDetail from "./SharedStudyComp";
 
 //import HDWalletProvider from "@truffle/hdwallet-provider";
 
@@ -61,6 +62,11 @@ class Main extends Component {
         <Home auth={this.state.auth} authhandler={this.authhandler} accounts={this.state.accounts}/>
       )
     }
+    const StudyParam = ({match}) =>{
+      return(
+        <StudyDetail params={match.params.dishId} />
+        )
+    }
     return (
       <div className="App">
         <Header auth={this.state.auth} />
@@ -74,6 +80,7 @@ class Main extends Component {
           <Route path='/treat' component={() => <AllTreatmentComponent contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
           <Route path='/patdata' component={() => <GetPatient contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
           <Route path='/shared' component={() => <SharedComp contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
+          <Route path='/studydet/:dishId' component={StudyParam}/>
           <Redirect to="/"/>
         </Switch>
         <Footer/>

@@ -17,9 +17,9 @@ class Header extends Component{
     }
 
     render(){
-        if(!this.props.auth){
-            return(<React.Fragment></React.Fragment>);
-        }
+        // if(!this.props.auth){
+        //     return(<React.Fragment></React.Fragment>);
+        // }
         return(
             <React.Fragment>
                 <Navbar dark expand="md">
@@ -51,6 +51,9 @@ class Header extends Component{
                             </NavItem>
                             <NavItem>
                                 <NavLink className="nav-link" to="/shared">Study List</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link" to="/studydet">Study</NavLink>
                             </NavItem>
                             </Nav>
                         </Collapse>
