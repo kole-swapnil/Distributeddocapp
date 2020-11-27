@@ -72,7 +72,7 @@ class Main extends Component {
         <Header auth={this.state.auth} />
 
         <Switch>
-          <Route exact path='/' component={Homepage} />
+          <Route path='/home' component={Homepage} />
           <Route path='/doctor' component={() => <DoctorComp contract={this.state.contract} accounts={this.state.accounts } auth={this.state.auth}/>} />
           <Route path='/treatment' component={() => <TreatmentComp contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
           <Route path='/docs' component={() => <AllDocsComponent contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
@@ -81,7 +81,7 @@ class Main extends Component {
           <Route path='/patdata' component={() => <GetPatient contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
           <Route path='/shared' component={() => <SharedComp contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
           <Route path='/studydet/:dishId' component={StudyParam}/>
-          <Redirect to="/"/>
+          <Redirect to="/home"/>
         </Switch>
         <Footer/>
       </div>
