@@ -31,7 +31,7 @@ function Allpatrender({dish}){
     )
     }
 
-class AllTreatmentComponent extends Component{
+class StudyListComponent extends Component{
     constructor(props){
         super(props);
         this.state = { docCount : 0, dish: [] }
@@ -85,4 +85,4 @@ class AllTreatmentComponent extends Component{
 
 
 
-export default AllTreatmentComponent;
+export default StudyListComponent;

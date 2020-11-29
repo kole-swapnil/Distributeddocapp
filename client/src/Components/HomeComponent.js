@@ -25,7 +25,7 @@ function Home(props){
         }
         
         
-        console.log(addr);
+        console.log(props.accounts[0]);
         
     }
     
