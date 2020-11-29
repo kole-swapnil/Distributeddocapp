@@ -17,13 +17,9 @@ class Header extends Component{
     }
 
     render(){
-<<<<<<< HEAD
         // if(!this.props.auth){
         //     return(<React.Fragment></React.Fragment>);
         // }
-=======
-    
->>>>>>> 9be8472abde9a48d42550bf4ca8209e7f5bf46c4
         return(
             <React.Fragment>
                 <Navbar dark expand="md">
