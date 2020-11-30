@@ -14,6 +14,8 @@ import AllTreatmentComponent from "./AllTreatment";
 import GetPatient from "./getPatientComponent";
 import SharedComp from "./SharedComponent";
 import StudyDetail from "./SharedStudyComp";
+import StudyListComponent from "./StudyListComponent";
+
 
 //import HDWalletProvider from "@truffle/hdwallet-provider";
 
@@ -64,7 +66,7 @@ class Main extends Component {
     }
     const StudyParam = ({match}) =>{
       return(
-        <StudyDetail params={match.params.dishId} />
+        <StudyDetail params={match.params.dishId} contract={this.state.contract} accounts={this.state.accounts}/>
         )
     }
     return (
@@ -79,7 +81,7 @@ class Main extends Component {
           <Route path='/patient' component={() => <PatientComp contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>} />
           <Route path='/treat' component={() => <AllTreatmentComponent contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
           <Route path='/patdata' component={() => <GetPatient contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
-          <Route path='/shared' component={() => <SharedComp contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
+          <Route path='/shared' component={() => <StudyListComponent contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
           <Route path='/studydet/:dishId' component={StudyParam}/>
           <Redirect to="/home"/>
         </Switch>

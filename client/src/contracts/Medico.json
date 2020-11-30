@@ -85,9 +85,9 @@
           "type": "string"
         },
         {
-          "internalType": "uint256",
+          "internalType": "string",
           "name": "_study_ohifid",
-          "type": "uint256"
+          "type": "string"
         },
         {
           "internalType": "uint256",
@@ -742,9 +742,9 @@
           "type": "string"
         },
         {
-          "internalType": "uint256",
+          "internalType": "string",
           "name": "study_ohifid",
-          "type": "uint256"
+          "type": "string"
         },
         {
           "internalType": "uint256",
@@ -22895,7 +22895,7 @@
         }
       },
       "links": {},
-      "address": "0xdFFCA41bB8Da102AEd85D9577FD39ef940d97b8B",
+      "address": "0x4aCA0B4adc6746325213986E607A1471189396f7",
       "transactionHash": "0x74a17eda6757552a5d7992778d13f8be626860f3cd1aa2834bd64934db83e11e"
     }
   },

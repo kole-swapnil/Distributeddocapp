@@ -6,26 +6,25 @@ import { BrowserRouter, NavLink } from 'react-router-dom';
 import { render } from 'react-dom';
 var mst;
 var alldocs = [];
+function handleClick(y){
+        
+    window.location.replace(`http://localhost:3000/viewer/${y}`);
+}
 function Allpatrender({dish}){
-    var day = moment.unix(dish.dateofComp); 
-    var xy = dish.dateofComp;
-    var date = new Date(xy*1000);
-    var time = day.format('dddd MMMM Do YYYY, h:mm:ss a');
-    var yz = xy != 0?"bg-success text-white":""; 
+
+    var yz = "bg-primary text-white"; 
     return(
         <Card className={yz}>
-        <i className="fa fa-medkit fa-5x"></i>
+        <i className="fa fa-book fa-5x"></i>
         <CardBody>
-        <CardTitle>Treatment ID : {dish.treatment_id}</CardTitle>
-        <CardText><small>Doctor account : {dish.doctor_add}</small></CardText>
-        <CardText><small>Patient account : {dish.patient_add}</small></CardText>
-        <CardText><small>Symptoms : {dish.symptoms}</small></CardText>
-        <CardText><small>Medications : {dish.medications}</small></CardText>
-        <CardText><small>Description : {dish.description}</small></CardText>
-        <CardText><small>Prescription : {dish.prescription}</small></CardText>
-          <CardText>
-            <small >Time completed : {xy == 0?"Treatment not completed":time}</small>
-          </CardText>
+        <CardTitle>Study ID : {dish.study_id}</CardTitle>
+        <CardText><small>Patient Name : {dish.patname}</small></CardText>
+        <CardText><small>Study Type : {dish.study_ohifid}</small></CardText>
+        <CardText><small>Instance ID : {dish.instance_id}</small></CardText>
+        <CardText><small>Study Date : {dish.studydate}</small></CardText>
+        <Button color = "warning" onClick={() => handleClick(dish.url)}>
+            Look
+        </Button>
         </CardBody>
       </Card>
     )
@@ -43,7 +42,7 @@ class StudyListComponent extends Component{
                var c = await res?.length;
                 var response= [];
                 for(var i=0;i<c;i++){
-                    var rex = await this.props.contract?.methods.treat(res[i]).call();
+                    var rex = await this.props.contract?.methods.studies(res[i]).call();
                     response.push(rex);
                 }
 

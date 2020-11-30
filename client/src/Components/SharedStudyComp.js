@@ -14,6 +14,7 @@ class StudyDetail extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleAdd = this.handleAdd.bind(this);
     }
     
     handleInputChange(event){
@@ -28,23 +29,33 @@ class StudyDetail extends Component {
 
     async handleSubmit(event){
         // console.log("Current State" + JSON.stringify(this.state));
-        // event.preventDefault();
-        // const res = await this.props.contract.methods.callpatient(this.state.pataccount,this.state.allergies,this.state.weight,this.state.height,this.state.gender,this.state.age,this.state.bloodtype,this.state.location).send({from: this.props.accounts[0],gas : 1000000});
-        // console.log(res);
+         event.preventDefault();
+         const res = await this.props.contract.methods.sendstudy(1,this.state.docaccount).send({from: this.props.accounts[0],gas : 1000000});
+         console.log(res);
+
     
     }
+    async handleAdd(){
+        const res = await this.props.contract?.methods.addStudy(this.state.res[0],this.state.res[1],parseInt(this.state.res[2]),this.state.res[3],this.state.res[4]).send({from: this.props.accounts[0],gas : 1000000});
+        console.log(res);
+    }
+
     handleClick(){
         
         window.location.replace(`http://localhost:3000/viewer/${this.state.res[4]}`);
     }
     render() {
+        console.log(this.props);
      
         return (
             <div className="container">
+                <h1>Studies</h1>
+                <br/>
+                <br/>
                 <p>Patient Name : {this.state.res[0]}</p>
-                <p>StudyId : {this.state.res[1]}</p>
-                <p>InstanceId : {this.state.res[2]}</p>
-                <p>StudyDate : {this.state.res[3]}</p>
+                <p>Study Type : {this.state.res[1]}</p>
+                <p>Instance Id : {this.state.res[2]}</p>
+                <p>Study Date : {this.state.res[3]}</p>
                 <br/>
                 <br/>
                 <Form onSubmit={this.handleSubmit}>
@@ -55,19 +66,21 @@ class StudyDetail extends Component {
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
-                                <Col md={{size:10, offset:2}}>
-                                    <Button type="submit" color="primary">
+                                <Col >
+                                    <Button onClick={() => this.handleAdd()} color="primary">
+                                        Add Study
+                                    </Button>
+                                    <Button type="submit" color="success">
                                         Send Study
                                     </Button>
+                                    
                                 </Col>
                                 
                             </FormGroup>
 
                             
                         </Form>
-                        <Button onClick={() => this.handleClick()}>
-                            Look
-                        </Button>
+                        
                        
             
             </div>
