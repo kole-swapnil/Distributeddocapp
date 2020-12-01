@@ -22,6 +22,7 @@ class Header extends Component{
         // }
         return(
             <React.Fragment>
+                <div className="navi">
                 <Navbar dark expand="md">
                     <div className="container">
                         <NavbarToggler onClick={this.togglenav}/>
@@ -55,11 +56,16 @@ class Header extends Component{
                             <NavItem>
                                 <NavLink className="nav-link" to="/studydet">Study</NavLink>
                             </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link" to="/sharedcomp">Shared</NavLink>
+                            </NavItem>
                             </Nav>
                         </Collapse>
+                       
                     </div>
+                    <p className ="text-white" ><small>{this.props.accounts}</small></p>
                 </Navbar>
-            
+                </div>
             </React.Fragment>
         )
 

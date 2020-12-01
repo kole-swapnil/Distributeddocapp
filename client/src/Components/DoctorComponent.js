@@ -39,6 +39,10 @@ class DoctorComp extends Component{
        
         return(
             <div className="container">
+                <br/>
+            <br/>
+            <br/>
+            <br/>
                 
                     <h2>Register Doctor</h2>
                 <Form onSubmit={this.handleSubmit}>

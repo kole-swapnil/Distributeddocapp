@@ -63,6 +63,10 @@ class AllTreatmentComponent extends Component{
         
         return(
         <div className="container">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <h2>All Treatment</h2>
             <div className="row">
                 {Menu}

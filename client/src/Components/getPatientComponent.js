@@ -78,6 +78,10 @@ class GetPatient extends Component {
         
         return (
             <div className="container">
+                <br/>
+            <br/>
+            <br/>
+            <br/>
 
                 <h2>Patient Details</h2>
                 <Form onSubmit={this.handleSubmit}>

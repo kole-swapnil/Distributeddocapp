@@ -71,7 +71,7 @@ class Main extends Component {
     }
     return (
       <div className="App">
-        <Header auth={this.state.auth} />
+        <Header contract = {this.state.contract} accounts={this.state.accounts} auth={this.state.auth} />
 
         <Switch>
           <Route path='/home' component={Homepage} />
@@ -82,6 +82,7 @@ class Main extends Component {
           <Route path='/treat' component={() => <AllTreatmentComponent contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
           <Route path='/patdata' component={() => <GetPatient contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
           <Route path='/shared' component={() => <StudyListComponent contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
+          <Route path='/sharedcomp' component={() => <SharedComp contract={this.state.contract} accounts={this.state.accounts} auth={this.state.auth}/>}/>
           <Route path='/studydet/:dishId' component={StudyParam}/>
           <Redirect to="/home"/>
         </Switch>

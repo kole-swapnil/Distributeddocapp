@@ -11,7 +11,7 @@ class StudyDetail extends Component {
             res : this.props.params.split("&"),docaccount : null
         }
 
-        this.handleSubmit = this.handleSubmit.bind(this);
+        
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
@@ -27,14 +27,7 @@ class StudyDetail extends Component {
         
     }
 
-    async handleSubmit(event){
-        // console.log("Current State" + JSON.stringify(this.state));
-         event.preventDefault();
-         const res = await this.props.contract.methods.sendstudy(1,this.state.docaccount).send({from: this.props.accounts[0],gas : 1000000});
-         console.log(res);
 
-    
-    }
     async handleAdd(){
         const res = await this.props.contract?.methods.addStudy(this.state.res[0],this.state.res[1],parseInt(this.state.res[2]),this.state.res[3],this.state.res[4]).send({from: this.props.accounts[0],gas : 1000000});
         console.log(res);
@@ -49,6 +42,10 @@ class StudyDetail extends Component {
      
         return (
             <div className="container">
+                <br/>
+            <br/>
+            <br/>
+            <br/>
                 <h1>Studies</h1>
                 <br/>
                 <br/>
@@ -58,21 +55,14 @@ class StudyDetail extends Component {
                 <p>Study Date : {this.state.res[3]}</p>
                 <br/>
                 <br/>
-                <Form onSubmit={this.handleSubmit}>
-                            <FormGroup row>
-                                <Label htmlFor="docaccount" md={2}>Doctor Account</Label>
-                                <Col md={10}>
-                                    <Input type="text" id="docaccount" name="docaccount" placeholder="Doctor Account Address" value={this.state.docaccount} onChange={this.handleInputChange}/>
-                                </Col>
-                            </FormGroup>
+                <Form onSubmit={this.handleAdd}>
+
                             <FormGroup row>
                                 <Col >
-                                    <Button onClick={() => this.handleAdd()} color="primary">
+                                    <Button type="submit" color="primary">
                                         Add Study
                                     </Button>
-                                    <Button type="submit" color="success">
-                                        Send Study
-                                    </Button>
+                                    
                                     
                                 </Col>
                                 

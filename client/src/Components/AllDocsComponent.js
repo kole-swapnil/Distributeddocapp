@@ -61,6 +61,10 @@ class AllDocsComponent extends Component{
         
         return(
         <div className="container">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <h2>All Doctors</h2>
             <div className="row">
                 {Menu}

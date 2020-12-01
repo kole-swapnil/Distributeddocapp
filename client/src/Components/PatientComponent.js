@@ -43,7 +43,10 @@ class PatientComp extends Component{
         
         return(
             <div className="container">
-                
+                <br/>
+            <br/>
+            <br/>
+            <br/>
                     <h2>Add Patient</h2>
                 
                 <Form onSubmit={this.handleSubmit}>

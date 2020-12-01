@@ -72,7 +72,10 @@ class TreatmentComp extends Component{
         
         return(
             <div className="container">
-                
+                <br/>
+            <br/>
+            <br/>
+            <br/>
                     <h2>Add Treatment</h2>
                 
                 <Form onSubmit={this.handleSubmitadd}>
