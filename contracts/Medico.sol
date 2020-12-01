@@ -69,7 +69,7 @@ contract Medico{
         uint study_id;
         string patname;
         string study_ohifid;
-        uint instance_id;
+        string instance_id;
         string studydate;
         string url;
         
@@ -184,7 +184,7 @@ contract Medico{
         
     }
     
-    function addStudy(string memory _patname,string memory _study_ohifid,uint _instance_id,string memory _studydate,string memory _url)public onlyDoctor(msg.sender) returns(uint){
+    function addStudy(string memory _patname,string memory _study_ohifid,string memory _instance_id,string memory _studydate,string memory _url)public onlyDoctor(msg.sender) returns(uint){
         studycount++;
         studies[studycount].patname = _patname;
         studies[studycount].study_ohifid = _study_ohifid;
