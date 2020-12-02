@@ -22,7 +22,7 @@ import StudyListComponent from "./StudyListComponent";
 class Main extends Component {
   constructor(props) {
     super(props);
-    this.state = { storageValue: 0, web3: null, accounts: null, contract: null ,res : null,auth:false};
+    this.state = { storageValue: 0, web3: null, accounts: null, contract: null ,res : null,auth:true};
     this.authhandler = this.authhandler.bind(this);
   }
   componentDidMount = async () => {

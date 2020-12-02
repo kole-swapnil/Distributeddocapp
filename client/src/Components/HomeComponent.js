@@ -4,11 +4,6 @@ import { BrowserRouter, NavLink, Link } from 'react-router-dom';
 import '../App.css';
 
 let addr;
-function handleInputChange(event){
-    const target = event.target;
-    addr = target.value;
-    const name = target.name;
-};
 
 
 
@@ -42,23 +37,7 @@ function Home(props){
       
              <br/>
              <br/>        
-            <h2>Login/Logout</h2>
-            <Form onSubmit={handleSubmit}>
-                        <FormGroup row className={y?"invisible":""}>
-                            <Label htmlFor="acx" md={2}>Passphrase</Label>
-                            <Col md={10}>
-                                <Input type="password" id="acx" name="acx"  onChange={handleInputChange}/>
-                            </Col>
-                        </FormGroup>
-                        <FormGroup row>
-                            <Col md={{size:12}}>
-                                <Button type="submit" color="primary">
-                                    {y?"LOGOUT":"LOGIN"}
-                                </Button>
-                            </Col>
-                        </FormGroup>
-                    </Form>
-            
+
    </div>
     )
 }

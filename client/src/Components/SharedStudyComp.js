@@ -29,7 +29,7 @@ class StudyDetail extends Component {
 
 
     async handleAdd(){
-        const res = await this.props.contract?.methods.addStudy(this.state.res[0],this.state.res[1],parseInt(this.state.res[2]),this.state.res[3],this.state.res[4]).send({from: this.props.accounts[0],gas : 1000000});
+        const res = await this.props.contract?.methods.addStudy(this.state.res[0],this.state.res[1],this.state.res[2],this.state.res[3],this.state.res[4]).send({from: this.props.accounts[0],gas : 2000000});
         console.log(res);
     }
 
