@@ -35,7 +35,7 @@ class StudyDetail extends Component {
 
     handleClick(){
         
-        window.location.replace(`http://localhost:3000/viewer/${this.state.res[4]}`);
+        window.location.replace(`http://deserted-example.surge.sh/viewer/${this.state.res[4]}`);
     }
     render() {
         console.log(this.props);

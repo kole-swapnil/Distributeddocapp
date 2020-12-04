@@ -9,7 +9,7 @@ var alldocs = [];
 
 function handleClick(y){
         
-    window.location.replace(`http://localhost:3000/viewer/${y}`);
+    window.location.replace(`http://deserted-example.surge.sh/viewer/${y}`);
 }
 
 
